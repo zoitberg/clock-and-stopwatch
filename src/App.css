@@ -1,9 +1,15 @@
 .App {
   text-align: center;
+  background-image: url(./assets/background.jpg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
 }
 
@@ -14,13 +20,6 @@
 }
 
 .App-header {
-  background-image: url(./assets/background.jpg);
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
   text-shadow: 0 1px 0 #ccc,
@@ -39,6 +38,14 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.Time-container {
+  min-height: 60vh;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  flex-direction: column;
 }
 
 @keyframes App-logo-spin {

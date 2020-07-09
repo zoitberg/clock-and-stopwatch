@@ -7,9 +7,14 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>The current time is: </h1>
-        <time></time>
-        <img src={logo} className="App-logo" alt="logo" />      
-      </header>
+      </header>  
+      <main className="Time-container">
+        <time>{Date.parse(new Date())}</time>
+        <img src={logo} className="App-logo" alt="logo" /> 
+      </main>   
+      <footer>
+          kopyrajt orajt by W.
+      </footer>
     </div>
   );
 }
