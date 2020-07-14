@@ -13,13 +13,16 @@ class Clock extends React.Component {
     }
        getTime() {
         const date = new Date(); 
-        const hours = date.getHours();
-        const minutes = date.getMinutes();
-        const seconds = date.getSeconds();
+        const hours = date.getHours() < 10 ? `0${date.getHours()}` : date.getHours()
+        const minutes = date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes();
+        const seconds = date.getSeconds() < 10 ? `0${date.getSeconds()}` : date.getSeconds();
+        const currentDate = `${date.getMonth()}/${date.getDay()}/${date.getFullYear()}`;
+
             this.setState({
                 hours: hours,
                 minutes: minutes, 
-                seconds: seconds
+                seconds: seconds,
+                currentDate: currentDate
             });
        }
 
@@ -34,6 +37,7 @@ class Clock extends React.Component {
 
         return (
             <time>
+                {this.state.currentDate} <br/>
                {`${this.state.hours}:${this.state.minutes}:${this.state.seconds}`}
             </time>
         )
