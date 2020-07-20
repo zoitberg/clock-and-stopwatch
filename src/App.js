@@ -16,7 +16,8 @@ function App() {
         <h1>Simple Clock App</h1>
       </header>  
         <main className="Time-container"> 
-          <Card style={{ width: '18rem' }}>
+          <Card style={{ width: '18rem', backgroundColor: 'rgba(0,0,0,0.3)', 
+          color: 'white', border: '0px' }}>
             <Card.Body>
               <Card.Title>Current time and date</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">Check time in your zone </Card.Subtitle>

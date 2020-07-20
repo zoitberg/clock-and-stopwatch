@@ -5,11 +5,13 @@ class Clock extends React.Component {
     constructor(props) {
         super(props);
             this.state = {
-                hours: 1,
-                minutes: 2,
-                seconds: 3
+                hours: '',
+                minutes: '',
+                seconds: '',
+                currentDate: ''
             }
             this.getTime = this.getTime.bind(this);
+            this.getDate = this.getDate.bind(this);
     }
        getTime() {
         const date = new Date(); 
@@ -24,6 +26,16 @@ class Clock extends React.Component {
                 seconds: seconds,
                 currentDate: currentDate
             });
+       }
+
+       // getting date
+       getDate() {
+           const monthsAndDays = {
+               months: [],
+               weekDays: []
+           };
+
+
        }
 
        componentDidMount() {
