@@ -18,40 +18,54 @@ class Clock extends React.Component {
         const hours = date.getHours() < 10 ? `0${date.getHours()}` : date.getHours()
         const minutes = date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes();
         const seconds = date.getSeconds() < 10 ? `0${date.getSeconds()}` : date.getSeconds();
-        const currentDate = `${date.getMonth()}/${date.getDay()}/${date.getFullYear()}`;
-
+        
             this.setState({
                 hours: hours,
                 minutes: minutes, 
-                seconds: seconds,
-                currentDate: currentDate
+                seconds: seconds
             });
        }
 
-       // getting date
+     
        getDate() {
            const monthsAndDays = {
-               months: [],
-               weekDays: []
+               'months': ["January", "February", "March", "April", "May", "June", "July", "August", "September",
+                "October", "November", "December"],
+               'weekDays': ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
            };
+           const date = new Date();
+           const currentDate = `${monthsAndDays["weekDays"][date.getMonth() - 1]} / 
+                                 ${monthsAndDays["months"][date.getMonth()]} / ${date.getFullYear()}`;
 
-
+                this.setState({
+                        currentDate: currentDate
+                });
+            console.log(monthsAndDays);
+            console.log(monthsAndDays["months"][date.getMonth()])
+ 
        }
 
        componentDidMount() {
            setInterval(() => {
                 this.getTime();
-            }, 1000)
+            }, 1000);
+                this.getDate();
+            setInterval(() => {
+                this.getDate();
+            }, 43200000);
+
        }
 
     render() {
         
 
         return (
-            <time>
-                {this.state.currentDate} <br/>
-               {`${this.state.hours}:${this.state.minutes}:${this.state.seconds}`}
-            </time>
+            <div>
+                <time>{this.state.currentDate} </time>
+                <time>
+                    {`${this.state.hours}:${this.state.minutes}:${this.state.seconds}`}
+                </time>
+            </div>
         )
     }
 }
