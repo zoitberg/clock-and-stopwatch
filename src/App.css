@@ -19,16 +19,18 @@
   }
 }
 
-.App-header {
-  font-size: 55px;
+.App-header h1 {
+  font-size: 13px;
+  font-weight: 700;
   color: white;
+  letter-spacing: 2px;
 }
 
 .App-link {
   color: #61dafb;
 }
 
-.Clock-container {
+.Time-container {
   min-height: 60vh;
   display: flex;
   justify-content: space-around;
@@ -36,6 +38,29 @@
   flex-direction: column;
 }
 
+.timeAndDate-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.date-element {
+  font-size: 34px;
+}
+
+.time-element { 
+  font-size: 55px;
+  font-weight: 700;
+  -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 3s; /* Firefox < 16 */
+        -ms-animation: fadein 3s; /* Internet Explorer */
+         -o-animation: fadein 3s; /* Opera < 12.1 */
+            animation: fadein 3s;
+}
+
+footer {
+  font-size: 8px;
+}
 
 @keyframes App-logo-spin {
   from {
@@ -44,4 +69,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }

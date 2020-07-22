@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../App.css';
 
 class Clock extends React.Component {
     constructor(props) {
@@ -34,7 +34,7 @@ class Clock extends React.Component {
                'weekDays': ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
            };
            const date = new Date();
-           const currentDate = `${monthsAndDays["weekDays"][date.getMonth() - 1]} / 
+           const currentDate = `${date.getDate()} ${monthsAndDays["weekDays"][date.getDay() - 1]} / 
                                  ${monthsAndDays["months"][date.getMonth()]} / ${date.getFullYear()}`;
 
                 this.setState({
@@ -60,9 +60,9 @@ class Clock extends React.Component {
         
 
         return (
-            <div>
-                <time>{this.state.currentDate} </time>
-                <time>
+            <div className="timeAndDate-container">
+                <time className="date-element">{this.state.currentDate} </time>
+                <time className="time-element">
                     {`${this.state.hours}:${this.state.minutes}:${this.state.seconds}`}
                 </time>
             </div>

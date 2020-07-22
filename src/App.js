@@ -13,8 +13,8 @@ function App() {
       <header className="App-header">
         <h1>Simple Clock App</h1>
       </header>  
-        <main className="Clock-container"> 
-          <Card style={{ width: '18rem', backgroundColor: 'rgba(0,0,0,0.3)', 
+        <main className="Time-container"> 
+          <Card style={{ backgroundColor: 'rgba(0,0,0,0.3)', 
           color: 'white', border: '0px' }}>
             <Card.Body>
               <Card.Title>Current time and date</Card.Title>
@@ -29,7 +29,7 @@ function App() {
           <img src={logo} className="App-logo" alt="logo" /> 
         </main>   
       <footer>
-          kopyrajt orajt by W.
+          by W.
       </footer>
     </div>
   );
