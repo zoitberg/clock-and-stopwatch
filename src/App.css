@@ -51,11 +51,14 @@
 .time-element { 
   font-size: 55px;
   font-weight: 700;
-  -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 3s; /* Firefox < 16 */
-        -ms-animation: fadein 3s; /* Internet Explorer */
-         -o-animation: fadein 3s; /* Opera < 12.1 */
-            animation: fadein 3s;
+}
+
+.fadeInFadeOut {
+  -webkit-animation: fadeInFadeOut 1 .5s ease-in; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadeInFadeOut 1 .5s ease-in; /* Firefox < 16 */
+   -ms-animation: fadeInFadeOut 1 .5s ease-in; /* Internet Explorer */
+    -o-animation: fadeInFadeOut 1 .5s ease-in; /* Opera < 12.1 */
+       animation: fadeInFadeOut 1 .5s ease-in;
 }
 
 footer {
@@ -71,7 +74,8 @@ footer {
   }
 }
 
-@keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+@keyframes fadeInFadeOut {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 0; }
 }
