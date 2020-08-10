@@ -15,7 +15,7 @@ class Hours extends React.Component {
                         `0${date.getHours()}` : date.getHours();
         const hourSpan = document.querySelector('.hourSpan');     
 
-            if(this.state.hours != hours) {
+            if(this.state.hours !== hours) {
                 hourSpan.animate([
                     {opacity: 0}, 
                     {opacity: 1}

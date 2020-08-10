@@ -25,15 +25,10 @@ class Clock extends React.Component {
            const date = new Date();
            const currentDate = `${date.getDate()} ${monthsAndDays["weekDays"][date.getDay()]} / 
                                  ${monthsAndDays["months"][date.getMonth()]} / ${date.getFullYear()}`;
-
-
-                             console.log(date.getDay())    
+  
                 this.setState({
                         currentDate: currentDate
                 });
-            console.log(monthsAndDays);
-            console.log(monthsAndDays["months"][date.getMonth()])
- 
        }
 
 

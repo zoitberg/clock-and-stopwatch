@@ -14,7 +14,7 @@ class Seconds extends React.Component {
         const seconds = date.getSeconds() < 10 ? `0${date.getSeconds()}` 
                         : date.getSeconds();
         const secondSpan = document.querySelector('.secondSpan');
-                       // console.log(`previousVal: ${this.state.seconds} curVal: ${seconds}`)                    
+                                           
               secondSpan.animate([
                 {opacity: 0}, 
                 {opacity: 1}

@@ -10,19 +10,21 @@ class Minutes extends React.Component {
             this.getMinutes = this.getMinutes.bind(this);
     }
 
+    //refactor, tak zeby getMinutes, mial callbacka z animacja?? zamiast animowania 
+
     getMinutes() {
         const date = new Date();
         const minutes = date.getMinutes() < 10 ? `0${date.getMinutes()}` 
                         : date.getMinutes();
         const minuteSpan = document.querySelector('.minuteSpan');     
  
-            if(this.state.minutes != minutes) {
+            if(this.state.minutes !== minutes) {
                 minuteSpan.animate([
                     {opacity: 0}, 
                     {opacity: 1}
                 ], {duration: 500, iterations: 1});
             }
-            
+
         this.setState({
             minutes: minutes
         });
