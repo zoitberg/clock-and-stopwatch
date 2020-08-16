@@ -4,20 +4,24 @@ import React from 'react';
 class Minutes extends React.Component {
     constructor(props) {
         super(props);
+
+        this._isMounted = false;
             this.state = {
                 minutes: ''
             }
             this.getMinutes = this.getMinutes.bind(this);
     }
 
-    //refactor, tak zeby getMinutes, mial callbacka z animacja?? zamiast animowania 
-
+    
     getMinutes() {
         const date = new Date();
         const minutes = date.getMinutes() < 10 ? `0${date.getMinutes()}` 
                         : date.getMinutes();
         const minuteSpan = document.querySelector('.minuteSpan');     
- 
+        
+          if(!minuteSpan) {
+              return null;
+          }
             if(this.state.minutes !== minutes) {
                 minuteSpan.animate([
                     {opacity: 0}, 
@@ -25,18 +29,23 @@ class Minutes extends React.Component {
                 ], {duration: 500, iterations: 1});
             }
 
-        this.setState({
+        this._isMounted && this.setState({
             minutes: minutes
         });
            
     }
 
     componentDidMount() {
-        setInterval(() => {
-             this.getMinutes();
-         }, 1000);
+        this._isMounted = true;
+            setInterval(() => {
+                this.getMinutes();
+            }, 1000);
     } 
- 
+
+    componentWillUnmount() {
+        this._isMounted = false;
+    }
+
     render() {
         return (
             <span className='minuteSpan'>{`${this.state.minutes}:`}</span>

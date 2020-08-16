@@ -3,6 +3,8 @@ import React from 'react';
 class Seconds extends React.Component {
     constructor(props) {
         super(props);
+
+        this._isMounted = false; 
             this.state = {
                 seconds: ''
             }
@@ -14,22 +16,31 @@ class Seconds extends React.Component {
         const seconds = date.getSeconds() < 10 ? `0${date.getSeconds()}` 
                         : date.getSeconds();
         const secondSpan = document.querySelector('.secondSpan');
-                                           
+            
+            if(!secondSpan) {
+                return null;
+            }
               secondSpan.animate([
                 {opacity: 0}, 
                 {opacity: 1}
             ], {duration: 500, iterations: 1});  
 
-            this.setState({
+            this._isMounted && this.setState({
                 seconds: seconds
             });
     }
 
     componentDidMount() {
-        setInterval(() => {
-            this.getSeconds();
-        }, 1000);
+        this._isMounted = true;
+            setInterval(() => {
+                this.getSeconds();
+            }, 1000);
     }
+
+    componentWillUnmount() {
+        this._isMounted = false;
+    }
+    
 
     render() {
         return (
