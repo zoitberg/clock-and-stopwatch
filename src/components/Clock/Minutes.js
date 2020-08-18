@@ -22,6 +22,8 @@ class Minutes extends React.Component {
           if(!minuteSpan) {
               return null;
           }
+
+          if(this._isMounted) {
             if(this.state.minutes !== minutes) {
                 minuteSpan.animate([
                     {opacity: 0}, 
@@ -29,15 +31,15 @@ class Minutes extends React.Component {
                 ], {duration: 500, iterations: 1});
             }
 
-        this._isMounted && this.setState({
-            minutes: minutes
-        });
-           
+            this.setState({
+                minutes: minutes
+            });
+          }
     }
 
     componentDidMount() {
         this._isMounted = true;
-            setInterval(() => {
+                setInterval(() => {
                 this.getMinutes();
             }, 1000);
     } 

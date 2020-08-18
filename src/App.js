@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Clock from './components/Clock.js';
+import Clock from './components/Clock/Clock.js';
 import StopwatchButton from './components/Button/StopwatchButton.js';
 import ClockButton from './components/Button/ClockButton.js';
 
@@ -18,7 +18,6 @@ class App extends Component {
 
   triggerStopwatch = () => {
     this.setState({
-      ...this.state,
       isClockState: false,
       isStopwatchState: true
     })
@@ -26,7 +25,6 @@ class App extends Component {
 
   triggerClock = () => {
     this.setState({
-      ...this.state, 
       isClockState: true, 
       isStopwatchState: false
     })
@@ -37,39 +35,56 @@ class App extends Component {
       <div>
         {
           this.state.isClockState && 
-          
-        <div className="App">
-           <header className="App-header">
-          <h1>Simple Clock App</h1>
-        </header>  
-          <main className="Time-container"> 
-            <Card style={{ backgroundColor: 'rgba(0,0,0,0.3)', 
-            color: 'white', border: '0px' }}>
-              <Card.Body>
-                <Card.Title>Current time and date</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">Check time in your zone </Card.Subtitle>
-                  <Card.Text>
-                    <Clock />
-                  </Card.Text> 
-                  <StopwatchButton switch={this.triggerStopwatch} />
-            <p>switched to clock</p>
-              </Card.Body>
-            </Card>
-            <img src={logo} className="App-logo" alt="logo" /> 
-          </main>   
-        <footer>
-            by W.
-        </footer>
-            
-         </div>   
-          }
+            <div className="App">
+              <header className="App-header">
+                  <h1>Simple Clock App</h1>
+              </header>  
+                  <main className="Time-container"> 
+                    <Card style={{ backgroundColor: 'rgba(0,0,0,0.3)', 
+                        color: 'white', border: '0px' }}>
+                      <Card.Body>
+                        <Card.Title>Current time and date</Card.Title>
+                          <Card.Subtitle className="mb-2 text-muted">Check time in your zone </Card.Subtitle>
+                            <Clock />
+                            <StopwatchButton switch={this.triggerStopwatch} />
+                            {/*mock p */}
+                            <p>switched to clock</p>
+                      </Card.Body>
+                    </Card>
+                    <img src={logo} className="App-logo" alt="logo" /> 
+                  </main>   
+                <footer>
+                    by W.
+                </footer>       
+            </div>   
+        }
           
         {
           this.state.isStopwatchState &&   
-          <div>
-              <ClockButton switch={this.triggerClock}/>
-              <p>switched to stopwatch</p>
-          </div>
+          <div className="App">
+              <header className="App-header">
+                  <h1>Simple Clock App</h1>
+              </header>  
+                  <main className="Time-container"> 
+                    <Card style={{ backgroundColor: 'rgba(0,0,0,0.3)', 
+                        color: 'white', border: '0px' }}>
+                      <Card.Body>
+                        <Card.Title>Use Stopwatch function</Card.Title>
+                          <Card.Subtitle className="mb-2 text-muted">Start, pause and reset time</Card.Subtitle>
+                            <ClockButton switch={this.triggerClock}/>
+                            {/*mock p and btns */}
+                            <p>switched to stopwatch</p>
+                            <button className="btn btn-success">START</button> 
+                            {/* conditional rendering po kliku w start, wyswietla sie napis pause*/}
+                            <button className="btn btn-danger">RESET</button>
+                      </Card.Body>
+                    </Card>
+                    <img src={logo} className="App-logo" alt="logo" /> 
+                  </main>   
+                <footer>
+                    by W.
+                </footer>       
+            </div>
         }
 
        

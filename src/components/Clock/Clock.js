@@ -1,5 +1,5 @@
 import React from 'react';
-import '../App.css';
+import '../../App.css';
 
 import Hours from './Hours.js';
 import Minutes from './Minutes.js';

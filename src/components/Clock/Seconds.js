@@ -20,14 +20,19 @@ class Seconds extends React.Component {
             if(!secondSpan) {
                 return null;
             }
-              secondSpan.animate([
-                {opacity: 0}, 
-                {opacity: 1}
-            ], {duration: 500, iterations: 1});  
 
-            this._isMounted && this.setState({
-                seconds: seconds
-            });
+            if(this._isMounted) {
+                secondSpan.animate([
+                    {opacity: 0}, 
+                    {opacity: 1}
+                ], {duration: 500, iterations: 1});
+
+                    this.setState({
+                        seconds: seconds
+                    });
+            }
+            
+            
     }
 
     componentDidMount() {
@@ -39,6 +44,7 @@ class Seconds extends React.Component {
 
     componentWillUnmount() {
         this._isMounted = false;
+        
     }
     
 

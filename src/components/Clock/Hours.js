@@ -18,16 +18,18 @@ class Hours extends React.Component {
                         `0${date.getHours()}` : date.getHours();
         const hourSpan = document.querySelector('.hourSpan');     
           
-        
+        if(this._isMounted) {
             if(this.state.hours !== hours) {
                 hourSpan.animate([
                     {opacity: 0}, 
                     {opacity: 1}
                 ], {duration: 500, iterations: 1});
             }
-        this._isMounted && this.setState({
-            hours: hours
-        });                
+
+            this.setState({
+                hours: hours
+            });
+        }                
     }
 
     componentDidMount() {
