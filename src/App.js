@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+
 import Clock from './components/Clock/Clock.js';
+import Stopwatch from './components/Stopwatch/Stopwatch.js'
 import StopwatchButton from './components/Button/StopwatchButton.js';
 import ClockButton from './components/Button/ClockButton.js';
+
 
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -47,8 +50,6 @@ class App extends Component {
                           <Card.Subtitle className="mb-2 text-muted">Check time in your zone </Card.Subtitle>
                             <Clock />
                             <StopwatchButton switch={this.triggerStopwatch} />
-                            {/*mock p */}
-                            <p>switched to clock</p>
                       </Card.Body>
                     </Card>
                     <img src={logo} className="App-logo" alt="logo" /> 
@@ -71,12 +72,11 @@ class App extends Component {
                       <Card.Body>
                         <Card.Title>Use Stopwatch function</Card.Title>
                           <Card.Subtitle className="mb-2 text-muted">Start, pause and reset time</Card.Subtitle>
+                            <Stopwatch />
                             <ClockButton switch={this.triggerClock}/>
-                            {/*mock p and btns */}
-                            <p>switched to stopwatch</p>
-                            <button className="btn btn-success">START</button> 
+                            
                             {/* conditional rendering po kliku w start, wyswietla sie napis pause*/}
-                            <button className="btn btn-danger">RESET</button>
+                            
                       </Card.Body>
                     </Card>
                     <img src={logo} className="App-logo" alt="logo" /> 
