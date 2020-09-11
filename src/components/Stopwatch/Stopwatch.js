@@ -81,9 +81,9 @@ class StopwatchContainer extends React.Component {
                     <p>{padToTwo(this.state.msec)}</p>
                 </div>
                 <div>
-                    <button className="btn btn-danger" onClick={this.handleReset}>Reset</button>
                     <button className="btn btn-success" onClick={this.handleToggle}>{!this.state.start ? 'Start' : 'Stop'}</button>
-                    <button className="btn btn-warning" onClick={()=>this.handleLap(this.state.min, this.state.sec, this.state.msec)} disabled={!this.state.start}>Lap Times</button>
+                    <button className="btn btn-warning" onClick={()=>this.handleLap(this.state.min, this.state.sec, this.state.msec)} disabled={!this.state.start}>Lap Time</button>
+                    <button className="btn btn-danger" onClick={this.handleReset}>Reset</button>
                 </div>
             </div>
         )

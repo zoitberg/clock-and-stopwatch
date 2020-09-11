@@ -73,10 +73,8 @@ class App extends Component {
                         <Card.Title>Use Stopwatch function</Card.Title>
                           <Card.Subtitle className="mb-2 text-muted">Start, pause and reset time</Card.Subtitle>
                             <Stopwatch />
-                            <ClockButton switch={this.triggerClock}/>
-                            
-                            {/* conditional rendering po kliku w start, wyswietla sie napis pause*/}
-                            
+                            <ClockButton switch={this.triggerClock}/>                           
+                            {/* conditional rendering po kliku w start, wyswietla sie napis pause*/} 
                       </Card.Body>
                     </Card>
                     <img src={logo} className="App-logo" alt="logo" /> 
