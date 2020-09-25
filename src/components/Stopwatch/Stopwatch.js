@@ -1,5 +1,6 @@
 import React from 'react';
 
+import ListComponent from './ListComponent';
 
 class StopwatchContainer extends React.Component {
     constructor(props) {
@@ -30,6 +31,7 @@ class StopwatchContainer extends React.Component {
             ...this.lapArr, 
             {min, sec, msec}
         ]
+        console.log(this.lapArr)
     }
 
     handleStart = () => {
@@ -79,6 +81,9 @@ class StopwatchContainer extends React.Component {
                     <p>{padToTwo(this.state.min) + ' : '}</p> 
                     <p>{padToTwo(this.state.sec) + ' : '}</p>   
                     <p>{padToTwo(this.state.msec)}</p>
+                </div>
+                <div>
+                    <ListComponent lap={this.lapArr} />
                 </div>
                 <div>
                     <button className="btn btn-success" onClick={this.handleToggle}>{!this.state.start ? 'Start' : 'Stop'}</button>
