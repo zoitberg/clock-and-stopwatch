@@ -9,7 +9,6 @@ class Clock extends React.Component {
     constructor(props) {
         super(props);
             this.state = {
-                seconds: '',
                 currentDate: ''
             }
             this.getDate = this.getDate.bind(this);

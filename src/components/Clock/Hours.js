@@ -6,7 +6,7 @@ class Hours extends React.Component {
 
         this._isMounted = false;
             this.state = {
-                hours: ''
+                hours: 0
             }
         this.getHours = this.getHours.bind(this);    
     }

@@ -11,8 +11,9 @@ class StopwatchContainer extends React.Component {
                msec: 0
             }
 
-            this.lapArr = [];
+            this._isMounted = false;
 
+            this.lapArr = [];
             this.interval = null;
     };
 
@@ -73,11 +74,19 @@ class StopwatchContainer extends React.Component {
         this.lapArr = [];
     };
 
+    componentDidMount() {
+        this._isMounted = true;
+    }
+
+    componentWillUnmount() {
+        this._isMounted = false;
+    }
+
     render() {
       let padToTwo = (number) => (number <= 9 ? `0${number}`: number);  
         return(
             <div>
-                <div style={{display: 'flex', justifyContent: 'center'}}>
+                <div className='stopwatch-container'>
                     <p>{padToTwo(this.state.min) + ' : '}</p> 
                     <p>{padToTwo(this.state.sec) + ' : '}</p>   
                     <p>{padToTwo(this.state.msec)}</p>

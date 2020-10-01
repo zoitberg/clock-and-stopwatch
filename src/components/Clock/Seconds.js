@@ -6,7 +6,7 @@ class Seconds extends React.Component {
 
         this._isMounted = false; 
             this.state = {
-                seconds: ''
+                seconds: 0
             }
             this.getSeconds = this.getSeconds.bind(this);
     }

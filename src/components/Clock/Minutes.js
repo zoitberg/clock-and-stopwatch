@@ -7,7 +7,7 @@ class Minutes extends React.Component {
 
         this._isMounted = false;
             this.state = {
-                minutes: ''
+                minutes: 0
             }
             this.getMinutes = this.getMinutes.bind(this);
     }
