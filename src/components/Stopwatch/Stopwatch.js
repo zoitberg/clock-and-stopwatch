@@ -32,7 +32,6 @@ class StopwatchContainer extends React.Component {
             ...this.lapArr, 
             {min, sec, msec}
         ]
-        console.log(this.lapArr)
     }
 
     handleStart = () => {
@@ -86,15 +85,15 @@ class StopwatchContainer extends React.Component {
       let padToTwo = (number) => (number <= 9 ? `0${number}`: number);  
         return(
             <div>
-                <div className='stopwatch-container'>
+                <div className='Stopwatch-container'>
                     <p>{padToTwo(this.state.min) + ' : '}</p> 
                     <p>{padToTwo(this.state.sec) + ' : '}</p>   
                     <p>{padToTwo(this.state.msec)}</p>
                 </div>
-                <div>
+                <div className='List-container'>
                     <ListComponent lap={this.lapArr} />
                 </div>
-                <div>
+                <div className='Button-container'>
                     <button className="btn btn-success" onClick={this.handleToggle}>{!this.state.start ? 'Start' : 'Stop'}</button>
                     <button className="btn btn-warning" onClick={()=>this.handleLap(this.state.min, this.state.sec, this.state.msec)} disabled={!this.state.start}>Lap Time</button>
                     <button className="btn btn-danger" onClick={this.handleReset}>Reset</button>

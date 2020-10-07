@@ -44,10 +44,21 @@
   justify-content: center;
 }
 
-.stopwatch-container {
+.Stopwatch-container {
   font-size: 22px;
   display: flex;
   justify-content: center;
+}
+
+.List-container {
+  max-height: 150px;
+  overflow-y: scroll;
+}
+
+.Button-container {
+  margin: 10px 0 20px 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .date-element {
